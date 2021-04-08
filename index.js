@@ -149,7 +149,7 @@ app.get("/sinhvien/xoa/:id", function(request, response){
 
 // Day la code cua Thanh moi hom nay
 
-
+// change 
 
 
 app.get("/",function(req,res){
