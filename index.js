@@ -121,7 +121,7 @@ app.post("/sinhvien/sua", urlencodedParser, function(req, res){
         });
     });
 });
-app.get("/sinhvien/xoa/:id", function(req, res){
+app.get("/sinhvien/xoa/:id", function(request, response){
     
     pool.connect(function(err, client, done){
         if(err){
@@ -146,6 +146,8 @@ app.get("/sinhvien/xoa/:id", function(req, res){
 
 
 });
+
+// hello đây là 1 chương trình nodejs của Thành đây nè 
 
 
 
