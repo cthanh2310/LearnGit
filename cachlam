@@ -9,3 +9,5 @@ b3- Ngắn server và chạy lại. gõ npm start
 
 // Hidden : Những gì hiện ra màn hình khách hàng k thấy mà vẫn post về phía server được
 post Lấy data phải thêm urlencodedParse
+
+// Đây la thay doi tu trong github 
