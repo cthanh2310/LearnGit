@@ -143,10 +143,8 @@ app.get("/sinhvien/xoa/:id", function(request, response){
         });
     }); // Lay database
 
-
-
 });
-
+// qua de
 // hello đây là 1 chương trình nodejs của Thành đây nè 
 
 
