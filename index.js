@@ -147,7 +147,7 @@ app.get("/sinhvien/xoa/:id", function(request, response){
 // qua de
 // hello đây là 1 chương trình nodejs của Thành đây nè 
 
-
+// Day la code cua Thanh moi hom nay
 
 
 
