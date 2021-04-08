@@ -1,0 +1,11 @@
+// lấy mẫu express : nodejs express ( google) + getting started + "Next helloworld"
+Cachlam
+b1- Cài nodemon: npm install nodemon
+b2- vào hàm scripts trong package.json thêm "start": "nodemon index.js",
+b3- Ngắn server và chạy lại. gõ npm start
+-- Tác dụng k cần ctrl c để ngắn server và gọi lại node index.js
+-- Muốn debug code : thêm --inspect sau chữ nodemon lúc nãy--> hiện ra item nodejs ở 1 bên console
+
+
+// Hidden : Những gì hiện ra màn hình khách hàng k thấy mà vẫn post về phía server được
+post Lấy data phải thêm urlencodedParse

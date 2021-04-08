@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form form-group">
+        <form action="/sinhvien/sua" method="POST" enctype="application/x-www-form-urlencoded">
+            <input style="height: 30%;" type="text" name="txtHoTen" class="align-content-center" placeholder="Ho ten" id="" value="<%= sv.hoten %>">    
+            <br> <br>
+            <input type="text" name="txtEmail" class="align-content-center" placeholder="Email" id="" value="<%= sv.email %>">    
+            <input type="hidden" name="txtId" class="form-control" placeholder="Id" id="" value="<%= sv.id %>">   
+            <br> 
+            <input type="submit" value="Sửa">
+        </form>
+    </div>
+
+
+
+</body>
+</html>

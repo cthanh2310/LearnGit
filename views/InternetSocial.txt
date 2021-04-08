@@ -1,0 +1,75 @@
+CREATE TABLE Users(
+"user_id" int NOT NULL ,
+"username" VARCHAR(25) NOT NULL,
+"gender" VARCHAR(7),
+"country" VARCHAR(255),
+PRIMARY KEY ("user_id"),
+UNIQUE(username)
+);
+
+INSERT INTO Users(username, gender, country)
+VALUES('mmv0000','Male','Ha Tinh')
+VALUES('atc0802', 'male', 'Nghe An')
+VALUES('cthanh2310', 'male', 'Ha Tinh')
+CREATE TABLE Posts(
+"content" VARCHAR(255),
+"post_id" int,
+"user_id" int NOT NULL,
+PRIMARY KEY ("post_id"),
+FOREIGN KEY ("user_id") REFERENCES Users("user_id")
+);
+INSERT INTO Posts(user_id, content)
+VALUES (2,'YES YES YES')
+VALUES (1,'NO NO NO')
+
+
+CREATE TABLE Comments(
+"comment_id" INT NOT NULL,
+"post_id" INT NOT NULL,
+"user_id" INT NOT NULL,
+"content" TEXT NOT NULL,
+PRIMARY KEY (comment_id),
+FOREIGN KEY (post_id) REFERENCES Posts(post_id),
+FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+INSERT INTO Comments(post_id, user_id, content)
+VALUES (2,1,'HAHAHA')
+VALUES (1,1,'HELLO')
+
+CREATE TABLE Likes(
+"user_id" INT NOT NULL,
+"post_id" int NOT NULL,
+"date_created" DATE NOT NULL,
+PRIMARY KEY ("user_id", "post_id"),
+UNIQUE("post_id", "user_id"),
+FOREIGN KEY (post_id) REFERENCES Posts("post_id"),
+FOREIGN KEY (user_id) REFERENCES Users("user_id")
+);
+INSERT INTO Likes(user_id, post_id, date_created)
+VALUES (1,2,'2021-04-13')
+-- select * from Likes
+-- SELECT * FROM Users
+SELECT Users.username, Users.user_id, Posts.content
+FROM Users
+INNER JOIN Posts
+ON Users.user_id = Posts.user_id
+SELECT * FROM likes
+SELECT COUNT(*) FROM Likes,Posts
+WHERE Likes.Post_id = Posts.post_id;
+ 
+SELECT COUNT(*), post_id
+FROM Likes
+GROUP BY post_id
+HAVING COUNT(post_id) > -1;
+
+SELECT * FROM Likes
+
+
+        
+SELECT  users.username, likes.post_id
+	FROM likes
+	LEFT JOIN users
+	ON users.user_id = likes.user_id
+UNION SELECT  users.username, likes.post_id
+	FROM likes
+	RIGHT JOIN users ON users.user_id = likes.user_id
